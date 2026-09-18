@@ -1,0 +1,459 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#173b65">
+<title>Alphabet Studio Pro</title>
+<style>
+:root{--nav:#102a43;--blue:#1769aa;--blue2:#eaf4ff;--green:#16794b;--red:#b42318;--amber:#b26200;--ink:#17212b;--muted:#667085;--line:#d5dce5;--bg:#eef3f8;--card:#fff;--radius:13px;--shadow:0 5px 22px rgba(16,42,67,.08)}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Inter,Arial,"Noto Naskh Arabic",sans-serif;color:var(--ink);background:var(--bg)}button,input,select,textarea{font:inherit}button{cursor:pointer}.appbar{position:sticky;top:0;z-index:20;background:var(--nav);color:#fff;box-shadow:0 2px 12px #0003}.bar-inner{max-width:1450px;margin:auto;padding:11px 18px;display:flex;align-items:center;justify-content:space-between;gap:14px}.brand{display:flex;align-items:center;gap:10px}.logo{width:37px;height:37px;border-radius:10px;background:#fff;color:var(--nav);display:grid;place-items:center;font-size:21px;font-weight:900}.brand h1{font-size:18px;margin:0}.brand small{display:block;color:#c8d9e8}.status{font-size:12px;background:#ffffff16;padding:7px 10px;border-radius:20px}.shell{max-width:1450px;margin:auto;padding:16px;display:grid;grid-template-columns:250px minmax(0,1fr);gap:16px}.sidebar{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:12px;height:max-content;position:sticky;top:75px;box-shadow:var(--shadow)}.navbtn{width:100%;border:0;background:transparent;text-align:left;padding:11px 12px;border-radius:8px;color:#32455a;font-weight:700;margin:2px 0}.navbtn:hover,.navbtn.active{background:var(--blue2);color:var(--blue)}.side-note{border-top:1px solid var(--line);margin-top:10px;padding:12px 8px 2px;color:var(--muted);font-size:12px;line-height:1.5}.content{min-width:0}.view{display:none}.view.active{display:block}.hero{background:linear-gradient(125deg,#123a62,#1e74b7);color:#fff;border-radius:var(--radius);padding:22px;margin-bottom:16px;box-shadow:var(--shadow)}.hero h2{margin:0 0 5px}.hero p{margin:0;color:#dbeeff}.cards{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:16px}.stat,.panel{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow)}.stat{padding:16px}.stat b{font-size:25px;color:var(--blue);display:block}.stat span{color:var(--muted);font-size:13px}.panel{padding:16px;margin-bottom:16px}.panel-head{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:13px}.panel h3{margin:0}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:12px}.field label{display:block;font-weight:750;font-size:13px;margin-bottom:5px}.field input,.field select,.field textarea{width:100%;border:1px solid #aeb8c5;border-radius:8px;padding:9px;background:#fff;color:var(--ink)}.field textarea{min-height:68px;resize:vertical}.btnrow{display:flex;flex-wrap:wrap;gap:8px}.btn{border:1px solid #9ba7b5;background:#fff;color:#26384b;padding:9px 13px;border-radius:8px;font-weight:750}.btn:hover{filter:brightness(.97)}.btn.primary{background:var(--blue);border-color:var(--blue);color:#fff}.btn.success{background:var(--green);border-color:var(--green);color:#fff}.btn.danger{border-color:#d92d20;color:var(--red)}.btn.small{padding:6px 9px;font-size:12px}.dropzone{border:2px dashed #8aa9c4;background:#f7fbff;border-radius:12px;padding:28px;text-align:center;transition:.2s}.dropzone.drag{border-color:var(--blue);background:#e7f4ff;transform:scale(1.005)}.dropzone strong{display:block;font-size:18px;margin-bottom:4px}.dropzone p{color:var(--muted);margin:4px 0 12px}.toolbar{display:flex;align-items:end;gap:10px;flex-wrap:wrap}.toolbar .field{min-width:160px;flex:1}.check{display:flex;align-items:center;gap:6px;font-size:13px}.check input{width:auto}.notice{border:1px solid;padding:10px 12px;border-radius:8px;margin-bottom:10px;font-size:14px}.notice.ok{background:#edf9f3;border-color:#75b899}.notice.warn{background:#fff8e8;border-color:#d2a14e}.notice.err{background:#fff1f0;border-color:#d98078}.asset-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(285px,1fr));gap:12px}.asset{background:#fbfcfe;border:1px solid var(--line);border-radius:10px;padding:10px;display:grid;grid-template-columns:26px 88px 1fr;gap:9px;align-items:start}.asset.unassigned{border-color:#e09a3e;background:#fffaf2}.asset.selected{outline:2px solid var(--blue);background:#f1f8ff}.asset-check{width:17px;height:17px;margin-top:3px}.thumb{width:88px;height:88px;object-fit:contain;background:#fff;border:1px solid var(--line);border-radius:7px}.asset-fields{min-width:0}.asset-fields select,.asset-fields input{width:100%;padding:6px;border:1px solid #b7c0cb;border-radius:6px;margin-bottom:5px}.asset-fields label{font-size:11px;font-weight:800}.original{font-size:10px;color:var(--muted);overflow-wrap:anywhere;direction:ltr;unicode-bidi:isolate}.empty{padding:35px;text-align:center;color:var(--muted);border:1px dashed var(--line);border-radius:10px}.project-list{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:12px}.project-card{border:1px solid var(--line);border-radius:10px;padding:14px;background:#fbfcfe}.project-card h4{margin:0 0 5px}.project-card p{font-size:12px;color:var(--muted);margin:4px 0 12px}.badge{display:inline-block;padding:3px 7px;border-radius:10px;background:var(--blue2);color:var(--blue);font-size:11px;font-weight:800}.preview-wrap{background:#cdd5df;padding:18px;border-radius:10px;overflow:auto}.paper{width:210mm;min-height:297mm;margin:0 auto 18px;background:#fff;padding:10mm;box-shadow:0 3px 16px #0002;page-break-after:always;break-after:page}.paper.landscape{width:297mm;min-height:210mm}.sheet-head{display:grid;grid-template-columns:repeat(3,1fr);gap:9mm;font-size:13px;margin-bottom:5mm}.sheet-title{text-align:center;font-size:20px;font-weight:800;margin-bottom:5mm}.match-grid{display:grid;gap:4mm;page-break-inside:avoid;break-inside:avoid-page}
+.match-grid>.cell{page-break-inside:avoid;break-inside:avoid}
+.paper{overflow:hidden}
+.paper.matching-paper{display:flex;flex-direction:column}
+.paper.matching-paper .match-grid{flex:0 0 auto}.match-grid.three{grid-template-columns:1fr .65fr 1fr}.match-grid.two{grid-template-columns:1fr .7fr}.cell{border:1px solid #111;min-height:30mm;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:2mm;break-inside:avoid}.cell img{max-width:100%;max-height:19mm;object-fit:contain}.cell.letter{font-size:55px;font-weight:850}.answer-line{width:80%;height:4mm;border-bottom:1px solid #111}.pic-label{font-size:9px;margin-top:1mm;overflow-wrap:anywhere;text-align:center}.test-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:3mm}.testcell{border:1px solid #111;min-height:38mm;padding:2mm;display:flex;flex-direction:column;align-items:center;break-inside:avoid}.testcell img{width:100%;height:20mm;object-fit:contain}.lines{width:92%;margin-top:1mm}.lines i{display:block;height:3mm;border-bottom:1px solid #111}.answer-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:3mm}.answer-item{border:1px solid #222;padding:3mm;display:flex;align-items:center;gap:3mm}.answer-item img{width:22mm;height:18mm;object-fit:contain}.page-no{text-align:right;font-size:10px;margin-top:3mm}.urdu{direction:rtl;font-family:"Noto Nastaliq Urdu","Jameel Noori Nastaleeq","Noto Naskh Arabic",serif}.fab{display:none;position:fixed;right:16px;bottom:16px;z-index:30;border:0;background:var(--blue);color:#fff;border-radius:50px;padding:13px 18px;font-weight:800;box-shadow:0 5px 18px #0004}
+
+/* Hamburger navigation upgrade */
+.menu-toggle{
+  width:44px;height:44px;display:grid;place-items:center;flex:0 0 44px;
+  border:1px solid rgba(255,255,255,.18);border-radius:11px;
+  background:rgba(255,255,255,.10);color:#fff;cursor:pointer;
+  transition:background .2s ease,transform .2s ease;
+}
+.menu-toggle:hover{background:rgba(255,255,255,.18)}
+.menu-toggle:active{transform:scale(.96)}
+.menu-toggle-lines,.menu-toggle-lines::before,.menu-toggle-lines::after{
+  display:block;width:21px;height:2px;border-radius:5px;background:currentColor;
+  transition:transform .25s ease,opacity .2s ease;
+}
+.menu-toggle-lines{position:relative}
+.menu-toggle-lines::before,.menu-toggle-lines::after{content:"";position:absolute;left:0}
+.menu-toggle-lines::before{top:-7px}.menu-toggle-lines::after{top:7px}
+.menu-toggle[aria-expanded="true"] .menu-toggle-lines{background:transparent}
+.menu-toggle[aria-expanded="true"] .menu-toggle-lines::before{transform:translateY(7px) rotate(45deg)}
+.menu-toggle[aria-expanded="true"] .menu-toggle-lines::after{transform:translateY(-7px) rotate(-45deg)}
+.sidebar-head{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:5px 7px 12px;margin-bottom:6px;border-bottom:1px solid var(--line)}
+.sidebar-title{font-size:12px;font-weight:850;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);white-space:nowrap}
+.sidebar-close{display:none;width:38px;height:38px;border:0;border-radius:9px;background:var(--blue2);color:var(--blue);font-size:22px}
+.navbtn{display:flex;align-items:center;gap:12px;min-height:46px;transition:background .2s,color .2s,transform .2s}
+.navbtn:hover{transform:translateX(2px)}
+.nav-icon{width:24px;flex:0 0 24px;text-align:center;font-size:18px}
+.nav-label{white-space:nowrap;overflow:hidden}
+.sidebar-overlay{position:fixed;inset:0;z-index:39;background:rgba(15,23,42,.52);backdrop-filter:blur(2px);opacity:0;visibility:hidden;transition:opacity .25s ease,visibility .25s ease}
+.sidebar-overlay.show{opacity:1;visibility:visible}
+body.menu-open{overflow:hidden}
+
+/* Desktop collapsed state */
+@media(min-width:951px){
+  .shell{transition:grid-template-columns .25s ease}
+  body.sidebar-collapsed .shell{grid-template-columns:82px minmax(0,1fr)}
+  body.sidebar-collapsed .sidebar{padding:10px 8px}
+  body.sidebar-collapsed .sidebar-head{justify-content:center}
+  body.sidebar-collapsed .sidebar-title,
+  body.sidebar-collapsed .nav-label,
+  body.sidebar-collapsed .side-note{display:none}
+  body.sidebar-collapsed .navbtn{justify-content:center;padding:11px 8px}
+  body.sidebar-collapsed .nav-icon{width:auto;flex-basis:auto}
+}
+
+@media(max-width:950px){
+  .shell{grid-template-columns:1fr;padding:12px}
+  .sidebar{position:fixed;left:0;top:0;bottom:0;z-index:40;width:min(84vw,300px);height:100dvh;border:0;border-radius:0;padding:13px;overflow-y:auto;transform:translateX(-105%);transition:transform .28s cubic-bezier(.2,.8,.2,1);box-shadow:18px 0 45px rgba(15,23,42,.2)}
+  .sidebar.show{transform:translateX(0)}
+  .sidebar-head{position:sticky;top:-13px;background:var(--card);z-index:2;padding-top:13px}
+  .sidebar-close{display:grid;place-items:center}
+  .navbtn{width:100%;white-space:nowrap}
+  .side-note{display:block}
+  .cards{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:650px){
+  .bar-inner{padding:9px 10px}.brand{gap:8px}.brand small,.status{display:none}.brand h1{font-size:16px}.logo{width:35px;height:35px;font-size:18px}
+  .shell{padding:9px}.hero{padding:18px 15px}.hero h2{font-size:21px}.cards{grid-template-columns:1fr 1fr;gap:9px}.stat{padding:13px}.stat b{font-size:27px}
+  .asset-grid{grid-template-columns:1fr}.panel{padding:12px}.dropzone{padding:22px 10px}.toolbar{align-items:stretch}.toolbar .field{min-width:100%;flex-basis:100%}
+  .btn{min-height:44px}.fab{display:block}.preview-wrap{padding:6px}.paper,.paper.landscape{width:100%;min-height:auto;padding:9px}.cell.letter{font-size:40px}.sheet-head{gap:3px}.test-grid{grid-template-columns:repeat(2,1fr)}
+}
+
+/* Phase 1 productivity features */
+.phase-card{border:1px solid var(--line);border-radius:11px;background:#fbfcfe;padding:13px}
+.coverage-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(72px,1fr));gap:8px}
+.coverage-item{border:1px solid var(--line);border-radius:9px;padding:9px;text-align:center;background:#fff}
+.coverage-item b{display:block;font-size:20px}.coverage-item.ok{border-color:#72b594;background:#f1fbf6}.coverage-item.low{border-color:#d5a44c;background:#fff9ed}.coverage-item.none{color:#98a2b3;background:#f7f8fa}
+.validation-list{display:grid;gap:7px;margin-top:10px}.validation-item{padding:9px 11px;border-radius:8px;font-size:13px}.validation-item.ok{background:#edf9f3;color:#11633d}.validation-item.warn{background:#fff8e8;color:#8b4c00}.validation-item.err{background:#fff1f0;color:#9f1c14}
+.asset-status{display:flex;align-items:center;gap:6px;margin:5px 0;font-size:11px;font-weight:800}.asset-status input{width:auto;margin:0}.asset.inactive{opacity:.58;filter:grayscale(.5)}
+.name-invalid{border-color:#d92d20!important;background:#fff4f3!important}.name-hint{font-size:10px;color:#b42318;margin:-2px 0 5px}
+.print-filter-note{font-size:12px;color:var(--muted);margin-top:8px}
+body.print-student .answer-paper{display:none!important}body.print-answer .paper:not(.answer-paper){display:none!important}
+@media(max-width:650px){.coverage-grid{grid-template-columns:repeat(4,1fr)}.phase-actions{display:grid;grid-template-columns:1fr 1fr;gap:8px}.phase-actions .btn{width:100%}}
+
+
+
+/* Phase 3 worksheet templates */
+.template-settings{grid-column:1/-1;border:1px solid var(--line);background:#f8fbff;border-radius:11px;padding:13px}.template-settings h4{margin:0 0 10px}.template-fields{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:10px}
+.choice-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2mm;width:100%;margin-top:2mm}.choice-letter{border:1px solid #222;border-radius:50%;width:11mm;height:11mm;display:grid;place-items:center;margin:auto;font-size:20px;font-weight:800}.choice-letter.correct-answer{border-style:dashed}
+.trace-row{width:94%;display:grid;grid-template-columns:repeat(4,1fr);gap:2mm;margin-top:2mm}.trace-letter{font-size:35px;font-weight:800;color:#c4c9d0;text-align:center;border-bottom:1px dashed #aab2bd;line-height:1.2}.trace-letter:first-child{color:#111}
+.missing-word{font-size:24px;font-weight:800;letter-spacing:2px;margin-top:2mm;text-align:center;direction:ltr;unicode-bidi:isolate}.missing-blank{display:inline-block;min-width:9mm;border-bottom:1.5px solid #111;color:transparent}
+.word-match-grid{display:grid;grid-template-columns:1fr 1fr;gap:4mm}.word-match-col{display:grid;gap:3mm}.word-match-item{border:1px solid #111;min-height:26mm;display:flex;align-items:center;justify-content:center;padding:2mm;break-inside:avoid}.word-match-item img{max-width:100%;max-height:20mm;object-fit:contain}.word-label{font-size:22px;font-weight:750;text-align:center}.word-match-line{width:80%;height:3mm;border-bottom:1px solid #111;margin-top:1mm}
+.writing-grid{display:grid;gap:3mm}.writing-grid.cols-2{grid-template-columns:repeat(2,1fr)}.writing-grid.cols-3{grid-template-columns:repeat(3,1fr)}.writing-grid.cols-4{grid-template-columns:repeat(4,1fr)}.writing-cell{border:1px solid #111;min-height:42mm;padding:2mm;display:flex;flex-direction:column;align-items:center;justify-content:flex-start;break-inside:avoid}.writing-cell img{width:100%;height:19mm;object-fit:contain}.writing-lines{width:92%;margin-top:1mm;display:flex;flex-direction:column;gap:.8mm}.writing-lines i{display:block;height:3mm;border-bottom:1px solid #111}.writing-lines.primary i:nth-child(2n){border-bottom-style:dashed;border-bottom-color:#999}
+.template-answer{font-size:15px;font-weight:800;margin-top:1mm}.template-note{font-size:11px;color:var(--muted);margin-top:5px}
+@media(max-width:650px){.template-fields{grid-template-columns:1fr}.word-match-grid{grid-template-columns:1fr 1fr}.writing-grid.cols-3,.writing-grid.cols-4{grid-template-columns:repeat(2,1fr)}.choice-letter{width:10mm;height:10mm;font-size:17px}}
+
+/* Phase 2 workflow features */
+.backup-reminder{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 14px;border:1px solid #d5a44c;background:#fff9ed;border-radius:10px;margin-bottom:14px}.backup-reminder strong{display:block}.backup-reminder span{display:block;color:#765000;font-size:12px;margin-top:2px}
+.quick-modal{position:fixed;inset:0;z-index:80;display:none;align-items:center;justify-content:center;padding:16px;background:rgba(15,23,42,.62);backdrop-filter:blur(4px)}.quick-modal.show{display:flex}.quick-card{width:min(94vw,620px);max-height:92dvh;overflow:auto;background:var(--card);border-radius:16px;box-shadow:0 25px 70px #0005;padding:16px}.quick-head{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:12px}.quick-head h3{margin:0}.quick-image-wrap{height:min(45vh,340px);display:grid;place-items:center;background:#f5f7fa;border:1px solid var(--line);border-radius:12px;overflow:hidden}.quick-image-wrap img{width:100%;height:100%;object-fit:contain}.quick-progress{font-size:12px;color:var(--muted);font-weight:800}.quick-letter-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(44px,1fr));gap:7px;margin-top:10px}.quick-letter{min-height:44px;border:1px solid var(--line);border-radius:9px;background:#fff;font-weight:850}.quick-letter.active{background:var(--blue);border-color:var(--blue);color:#fff}.quick-actions{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-top:13px}.quick-actions .btn{width:100%}
+.duplicate-review{display:none;border:1px solid #d5a44c;background:#fff9ed;border-radius:10px;padding:12px;margin-top:12px}.duplicate-review.show{display:block}.duplicate-list{display:grid;gap:8px;margin-top:9px}.duplicate-item{display:flex;align-items:center;justify-content:space-between;gap:10px;border-top:1px solid #ead3a8;padding-top:8px}.duplicate-item small{overflow-wrap:anywhere}
+.preview-nav{display:flex;align-items:center;justify-content:center;gap:10px;flex-wrap:wrap;margin-bottom:12px}.preview-nav .page-indicator{min-width:110px;text-align:center;font-weight:850}.preview-thumbs{display:flex;gap:8px;overflow-x:auto;padding:4px 2px 10px;scrollbar-width:thin}.preview-thumb{flex:0 0 auto;min-width:48px;height:38px;border:1px solid var(--line);border-radius:8px;background:#fff;font-size:12px;font-weight:800}.preview-thumb.active{background:var(--blue);border-color:var(--blue);color:#fff}
+.preview-wrap.single-page .paper{display:none}.preview-wrap.single-page .paper.preview-current{display:block}
+.name-mode-help{font-size:11px;color:var(--muted);margin-top:5px;line-height:1.4}.trace-name{font-size:13px;margin-top:1mm;color:#9aa3ad;letter-spacing:2px;text-align:center;border-bottom:1px dashed #aeb7c2;min-width:55%;padding-bottom:.5mm}
+.duplicate-badge{display:inline-block;margin-left:5px;padding:2px 6px;border-radius:8px;background:#fff0d6;color:#8b4c00;font-size:9px;font-weight:850}
+@media(max-width:650px){.backup-reminder{align-items:stretch;flex-direction:column}.quick-card{padding:12px}.quick-actions{grid-template-columns:1fr 1fr}.quick-actions .btn.primary{grid-column:1/-1}.preview-nav{position:sticky;top:62px;z-index:8;background:var(--card);padding:9px;border-radius:10px;box-shadow:var(--shadow)}}
+@media print{.preview-nav,.preview-thumbs,.quick-modal,.backup-reminder{display:none!important}.preview-wrap.single-page .paper{display:block!important}}
+
+@media print{@page{size:A4 portrait;margin:8mm}body{background:#fff}.appbar,.sidebar,.no-print,.fab,#messages{display:none!important}.shell{display:block;max-width:none;padding:0}.content,.view{display:block!important}.view:not(#previewView){display:none!important}#previewView>.hero,#previewView>.no-print{display:none!important}.preview-wrap{padding:0;background:#fff;overflow:visible}.paper{width:auto;min-height:auto;margin:0;padding:0;box-shadow:none}.paper.landscape{width:auto;min-height:auto}.paper:last-child{page-break-after:auto;break-after:auto}.paper,.match-grid,.match-grid>.cell{page-break-inside:avoid!important;break-inside:avoid-page!important}.cell,.testcell{break-inside:avoid}}
+</style>
+</head>
+<body>
+<header class="appbar"><div class="bar-inner"><div class="brand"><button id="menuToggle" class="menu-toggle no-print" type="button" aria-label="Open navigation menu" aria-controls="appSidebar" aria-expanded="false"><span class="menu-toggle-lines" aria-hidden="true"></span></button><div class="logo">Aا</div><div><h1>Alphabet Studio Pro</h1><small>Offline Worksheet Builder</small></div></div><div id="saveStatus" class="status">Ready</div></div></header>
+<div class="shell">
+<aside class="sidebar no-print" id="appSidebar" aria-label="Main navigation">
+<div class="sidebar-head"><span class="sidebar-title">Navigation</span><button id="sidebarClose" class="sidebar-close" type="button" aria-label="Close navigation menu">&times;</button></div>
+<button class="navbtn active" data-view="dashboardView"><span class="nav-icon" aria-hidden="true">⌂</span><span class="nav-label">Dashboard</span></button>
+<button class="navbtn" data-view="projectView"><span class="nav-icon" aria-hidden="true">⚙</span><span class="nav-label">Project Settings</span></button>
+<button class="navbtn" data-view="libraryView"><span class="nav-icon" aria-hidden="true">▣</span><span class="nav-label">Image Library</span></button>
+<button class="navbtn" data-view="builderView"><span class="nav-icon" aria-hidden="true">✎</span><span class="nav-label">Worksheet Builder</span></button>
+<button class="navbtn" data-view="previewView"><span class="nav-icon" aria-hidden="true">◉</span><span class="nav-label">Live Preview</span></button>
+<button class="navbtn" data-view="projectsView"><span class="nav-icon" aria-hidden="true">▤</span><span class="nav-label">Saved Projects</span></button>
+<div class="side-note">All project data and images are stored locally in this browser using IndexedDB.</div>
+</aside>
+<div id="sidebarOverlay" class="sidebar-overlay no-print" aria-hidden="true"></div>
+<main class="content">
+<div id="messages"></div>
+<section id="dashboardView" class="view active">
+<div class="hero"><h2>Professional Worksheet Dashboard</h2><p>Create bilingual, print-ready alphabet activities without uploading data to a server.</p></div>
+<div class="backup-reminder no-print" id="backupReminder"><div><strong>Local project backup recommended</strong><span>Your project is stored on this device. Export a backup before clearing browser data.</span></div><button class="btn" id="backupNow">Backup Now</button></div>
+<div class="cards"><div class="stat"><b id="statImages">0</b><span>Images</span></div><div class="stat"><b id="statAssigned">0</b><span>Assigned</span></div><div class="stat"><b id="statLetters">0</b><span>Letters covered</span></div><div class="stat"><b id="statPages">0</b><span>Preview pages</span></div></div>
+<div class="panel"><div class="panel-head"><h3>Quick Actions</h3></div><div class="btnrow"><button class="btn primary" data-go="libraryView">Upload Images</button><button class="btn" data-go="builderView">Build Worksheet</button><button class="btn success" id="quickPreview">Generate Preview</button><button class="btn" data-go="projectsView">Manage Projects</button></div></div>
+<div class="panel"><h3>Current Project</h3><p><b id="dashProject">Untitled Project</b></p><p id="dashMeta" style="color:var(--muted)">English • Matching Worksheet</p></div>
+</section>
+<section id="projectView" class="view">
+<div class="hero"><h2>Project Settings</h2><p>Configure project identity and worksheet header information.</p></div>
+<div class="panel"><div class="grid">
+<div class="field"><label>Project Name</label><input id="projectName" value="My Alphabet Project"></div>
+<div class="field"><label>Alphabet</label><select id="alphabet"><option value="english">English A-Z</option><option value="urdu">Urdu ا تا ے</option></select></div>
+<div class="field"><label>School Name</label><input id="schoolName" placeholder="School name"></div>
+<div class="field"><label>Teacher Name</label><input id="teacherName" placeholder="Teacher name"></div>
+<div class="field"><label>Class / Grade</label><input id="className" placeholder="e.g. Nursery"></div>
+<div class="field"><label>Subject</label><input id="subject" value="Alphabet"></div>
+</div><div class="btnrow" style="margin-top:14px"><button class="btn primary" id="saveProject">Save Project</button><button class="btn" id="newProject">New Project</button></div></div>
+</section>
+<section id="libraryView" class="view">
+<div class="hero"><h2>Image Library</h2><p>Drag, upload, search, select and edit each image independently.</p></div>
+<div class="panel"><div id="dropzone" class="dropzone"><strong>Drop images here</strong><p>PNG, JPG, WEBP and SVG files are supported. Numeric mobile filenames are accepted.</p><button class="btn primary" id="browseBtn">Browse Images</button><input id="fileInput" type="file" accept="image/png,image/jpeg,image/webp,image/svg+xml,.png,.jpg,.jpeg,.webp,.svg" multiple hidden></div></div>
+<div id="duplicateReview" class="duplicate-review no-print"><strong>Possible duplicate images found</strong><div id="duplicateList" class="duplicate-list"></div><div class="btnrow" style="margin-top:10px"><button class="btn" id="skipDuplicates">Skip Duplicates</button><button class="btn primary" id="keepDuplicates">Keep Both</button></div></div>
+<div class="panel"><div class="toolbar">
+<div class="field"><label>Search</label><input id="search" placeholder="Search display or original name"></div>
+<div class="field"><label>Letter Filter</label><select id="filterLetter"></select></div>
+<div class="field"><label>Bulk Letter</label><select id="bulkLetter"></select></div>
+<button class="btn" id="selectAll">Select Visible</button><button class="btn" id="clearSelection">Clear Selection</button><button class="btn primary" id="applyBulk">Apply to Selected</button><button class="btn danger" id="deleteSelected">Delete Selected</button>
+</div></div>
+<div class="panel"><div class="panel-head"><h3>Letter Coverage</h3><span class="badge">0 = missing, 1 = low</span></div><div id="coverageGrid" class="coverage-grid"></div></div>
+<div class="panel"><div class="panel-head"><h3>Images</h3><div class="btnrow"><button class="btn primary small" id="quickAssign">Quick Assignment</button><b id="imageCount">0 images</b></div></div><div id="assetGrid" class="asset-grid"><div class="empty">No images uploaded.</div></div></div>
+</section>
+<section id="builderView" class="view">
+<div class="hero"><h2>Worksheet Builder</h2><p>Choose a template, layout and printing behavior.</p></div>
+<div class="panel"><div class="grid">
+<div class="field"><label>Worksheet Type</label><select id="worksheetType">
+<option value="matching">Matching Worksheet</option>
+<option value="test">Picture Test Worksheet</option>
+<option value="circle">Circle the Correct Letter</option>
+<option value="trace">Trace the Letter</option>
+<option value="missing">Missing Beginning Letter</option>
+<option value="wordmatch">Match Picture to Word</option>
+<option value="writing">Picture + Writing Lines</option>
+</select></div>
+<div class="field"><label>Custom Title</label><input id="customTitle" placeholder="Leave blank for default title"></div>
+<div class="field"><label>Instructions</label><input id="instructions" placeholder="Optional instruction line"></div>
+<div class="field"><label>Letters per Page</label><select id="lettersPerPage"><option>4</option><option>5</option><option selected>6</option><option>7</option><option>8</option></select></div>
+<div class="field"><label>Images per Letter</label><select id="imagesPerLetter"><option value="1">1</option><option value="2" selected>2</option><option value="3">3</option><option value="all">All available</option></select></div>
+<div class="field"><label>Matching Layout</label><select id="layout"><option value="three">Picture - Letter - Picture</option><option value="two">Picture - Letter</option></select></div>
+<div class="field"><label>Page Orientation</label><select id="orientation"><option value="portrait">A4 Portrait</option><option value="landscape">A4 Landscape</option></select></div>
+<div class="field"><label>English Letter Style</label><select id="letterCase"><option value="upper">Uppercase</option><option value="lower">Lowercase</option></select></div>
+<div id="templateSettings" class="template-settings">
+<h4>Template Options</h4>
+<div class="template-fields">
+<div class="field"><label>Items per Page</label><select id="itemsPerPage"><option value="8">8 items</option><option value="12" selected>12 items</option><option value="16">16 items</option><option value="24">24 items</option></select></div>
+<div class="field" id="lineCountField"><label>Writing Lines</label><select id="lineCount"><option value="1">1 line</option><option value="2">2 lines</option><option value="3">3 lines</option><option value="4" selected>4 lines</option></select></div>
+<div class="field" id="lineStyleField"><label>Line Style</label><select id="lineStyle"><option value="plain">Plain lines</option><option value="primary">Primary handwriting lines</option></select></div>
+<div class="field" id="choiceCountField"><label>Letter Choices</label><select id="choiceCount"><option value="3" selected>3 choices</option><option value="4">4 choices</option></select></div>
+<div class="field" id="writingColumnsField"><label>Writing Grid Columns</label><select id="writingColumns"><option value="2">2 columns</option><option value="3" selected>3 columns</option><option value="4">4 columns</option></select></div>
+</div><div id="templateHelp" class="template-note">Options change according to the selected worksheet type.</div>
+</div>
+</div>
+<div class="btnrow" style="margin-top:14px"><div class="field" style="min-width:220px"><label>Display Name Mode</label><select id="nameMode"><option value="hide">Hide names</option><option value="below">Show below picture</option><option value="answer">Answer key only</option><option value="trace">Dotted tracing name</option></select><div class="name-mode-help">Controls where the Display Name appears in student worksheets.</div></div><label class="check" style="display:none"><input id="showNames" type="checkbox"> Print image names</label><label class="check"><input id="duplicates" type="checkbox"> Allow duplicates</label><label class="check"><input id="shuffleImages" type="checkbox" checked> Shuffle pictures</label><label class="check"><input id="answerKey" type="checkbox" checked> Include answer key</label><label class="check"><input id="selectedOnly" type="checkbox"> Use selected images only</label></div>
+<div class="btnrow" style="margin-top:16px"><button class="btn primary" id="generatePreview">Generate Live Preview</button><button class="btn success" id="printBtn">Print</button><button class="btn" id="pdfBtn">Save as PDF</button></div></div>
+</section>
+<section id="previewView" class="view">
+<div class="hero"><h2>Live Preview</h2><p>A4 preview of generated worksheet pages.</p></div>
+<div class="panel no-print"><div class="btnrow"><button class="btn primary" id="refreshPreview">Refresh Preview</button><button class="btn success" id="previewPrint">Print Student Worksheet</button><button class="btn" id="printAnswerKey">Print Answer Key</button><button class="btn" id="previewPdf">Save Student PDF</button><button class="btn" id="answerPdf">Save Answer Key PDF</button></div></div>
+<div class="panel no-print"><div class="preview-nav"><button class="btn" id="prevPage">Previous</button><span id="pageIndicator" class="page-indicator">Page 0 of 0</span><button class="btn" id="nextPage">Next</button><button class="btn" id="showAllPages">Show All</button></div><div id="previewThumbs" class="preview-thumbs"></div></div>
+<div id="validationReport" class="panel no-print"><div class="panel-head"><h3>Worksheet Validation</h3><span id="validationStatus" class="badge">Not checked</span></div><div id="validationList" class="validation-list"><div class="validation-item warn">Generate a preview to run validation.</div></div></div>
+<div id="previewWrap" class="preview-wrap"><div class="empty">Generate a preview from Worksheet Builder.</div></div>
+</section>
+<section id="projectsView" class="view">
+<div class="hero"><h2>Saved Projects</h2><p>Load, duplicate, export or delete locally stored projects.</p></div>
+<div class="panel"><div class="btnrow"><button class="btn primary" id="saveProject2">Save Current Project</button><button class="btn" id="exportProject">Export Project Backup</button><button class="btn" id="importProjectBtn">Import Backup</button><input id="importProject" type="file" accept="application/json,.json" hidden></div></div>
+<div class="panel"><div id="projectList" class="project-list"><div class="empty">No saved projects.</div></div></div>
+</section>
+</main></div>
+<button class="fab" id="fab">Generate</button>
+<script>
+(()=>{'use strict';
+const EN='ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
+const UR=['ا','ب','پ','ت','ٹ','ث','ج','چ','ح','خ','د','ڈ','ذ','ر','ڑ','ز','ژ','س','ش','ص','ض','ط','ظ','ع','غ','ف','ق','ک','گ','ل','م','ن','و','ہ','ھ','ء','ی','ے'];
+const $=id=>document.getElementById(id);let db,images=[],selected=new Set(),previewAnswers=[],autosaveTimer=null,pendingDuplicates=[],quickIndex=0,quickItems=[],previewIndex=0;const objectURLs=new Map();
+let state={id:crypto.randomUUID(),name:'My Alphabet Project',alphabet:'english',school:'',teacher:'',className:'',subject:'Alphabet',worksheetType:'matching',customTitle:'',instructions:'',lettersPerPage:'6',imagesPerLetter:'2',layout:'three',orientation:'portrait',letterCase:'upper',showNames:false,nameMode:'hide',duplicates:false,shuffle:true,answerKey:true,selectedOnly:false,itemsPerPage:'12',lineCount:'4',lineStyle:'plain',choiceCount:'3',writingColumns:'3',updated:Date.now()};
+const letters=()=>state.alphabet==='urdu'?UR:EN;const isUrdu=()=>state.alphabet==='urdu';
+function notify(text,type='ok'){const d=document.createElement('div');d.className='notice '+type;d.textContent=text;$('messages').appendChild(d);setTimeout(()=>d.remove(),5000)}
+function status(t){$('saveStatus').textContent=t}
+function openDB(){return new Promise((resolve,reject)=>{const r=indexedDB.open('AlphabetStudioProDB',1);r.onupgradeneeded=()=>{const d=r.result;if(!d.objectStoreNames.contains('projects'))d.createObjectStore('projects',{keyPath:'id'});if(!d.objectStoreNames.contains('images')){const s=d.createObjectStore('images',{keyPath:'id'});s.createIndex('projectId','projectId')}};r.onsuccess=()=>{db=r.result;resolve()};r.onerror=()=>reject(r.error)})}
+function tx(store,mode='readonly'){return db.transaction(store,mode).objectStore(store)}
+function req(r){return new Promise((resolve,reject)=>{r.onsuccess=()=>resolve(r.result);r.onerror=()=>reject(r.error)})}
+async function saveAll(show=false){if(!db)return;readForm();state.updated=Date.now();status('Saving...');await req(tx('projects','readwrite').put({...state}));for(const im of images)await req(tx('images','readwrite').put({...im,projectId:state.id}));status('Saved locally');if(show)notify('Project and images saved locally.','ok');renderProjects();updateStats()}
+function scheduleSave(){status('Unsaved changes');clearTimeout(autosaveTimer);autosaveTimer=setTimeout(()=>saveAll(false),700)}
+async function loadImages(projectId){revokeAllImageURLs();const all=await req(tx('images').getAll());images=all.filter(x=>x.projectId===projectId);selected.clear();renderAssets();updateStats()}
+async function deleteProjectData(id){const all=await req(tx('images').getAll());const doomed=all.filter(x=>x.projectId===id);doomed.forEach(x=>revokeImageURLs(x.id));const s=tx('images','readwrite');doomed.forEach(x=>s.delete(x.id));await req(tx('projects','readwrite').delete(id))}
+function readForm(){state.name=$('projectName').value.trim()||'Untitled Project';state.alphabet=$('alphabet').value;state.school=$('schoolName').value.trim();state.teacher=$('teacherName').value.trim();state.className=$('className').value.trim();state.subject=$('subject').value.trim();state.worksheetType=$('worksheetType').value;state.customTitle=$('customTitle').value.trim();state.instructions=$('instructions').value.trim();state.lettersPerPage=$('lettersPerPage').value;state.imagesPerLetter=$('imagesPerLetter').value;state.layout=$('layout').value;state.orientation=$('orientation').value;state.letterCase=$('letterCase').value;state.nameMode=$('nameMode').value;state.showNames=state.nameMode==='below'||state.nameMode==='trace';state.duplicates=$('duplicates').checked;state.shuffle=$('shuffleImages').checked;state.answerKey=$('answerKey').checked;state.selectedOnly=$('selectedOnly').checked;state.itemsPerPage=$('itemsPerPage').value;state.lineCount=$('lineCount').value;state.lineStyle=$('lineStyle').value;state.choiceCount=$('choiceCount').value;state.writingColumns=$('writingColumns').value}
+function fillForm(){$('projectName').value=state.name;$('alphabet').value=state.alphabet;$('schoolName').value=state.school;$('teacherName').value=state.teacher;$('className').value=state.className;$('subject').value=state.subject;$('worksheetType').value=state.worksheetType;$('customTitle').value=state.customTitle;$('instructions').value=state.instructions;$('lettersPerPage').value=state.lettersPerPage;$('imagesPerLetter').value=state.imagesPerLetter;$('layout').value=state.layout;$('orientation').value=state.orientation;$('letterCase').value=state.letterCase;$('nameMode').value=state.nameMode||(state.showNames?'below':'hide');$('showNames').checked=state.nameMode==='below'||state.nameMode==='trace';$('duplicates').checked=state.duplicates;$('shuffleImages').checked=state.shuffle;$('answerKey').checked=state.answerKey;$('selectedOnly').checked=!!state.selectedOnly;$('itemsPerPage').value=state.itemsPerPage||'12';$('lineCount').value=state.lineCount||'4';$('lineStyle').value=state.lineStyle||'plain';$('choiceCount').value=state.choiceCount||'3';$('writingColumns').value=state.writingColumns||'3';updateTemplateSettings();refreshLetterMenus();updateStats()}
+function refreshLetterMenus(){const opts='<option value="">Unassigned</option>'+letters().map(l=>`<option value="${l}">${l}</option>`).join('');$('bulkLetter').innerHTML=opts;$('filterLetter').innerHTML='<option value="all">All letters</option><option value="unassigned">Unassigned</option>'+letters().map(l=>`<option value="${l}">${l}</option>`).join('');renderAssets()}
+function escapeHTML(s){return String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
+function detect(file){const ls=letters(),parts=(file.webkitRelativePath||file.name).split('/');for(const folder of parts.slice(0,-1).reverse())if(ls.includes(folder.trim()))return folder.trim();let c=Array.from(file.name.replace(/\.[^.]+$/,'').trim())[0]||'';if(!isUrdu())c=c.toUpperCase();return ls.includes(c)?c:''}
+function fileSignature(f){return `${f.name.toLowerCase()}|${f.size}|${f.type}`}
+function existingSignature(im){return `${String(im.original).toLowerCase()}|${im.blob.size}|${im.blob.type}`}
+function makeImageRecord(f){return {id:crypto.randomUUID(),projectId:state.id,blob:f,original:f.name,name:f.name.replace(/\.[^.]+$/,''),letter:detect(f),active:true,created:Date.now()}}
+async function commitFiles(files){for(const f of files)images.push(makeImageRecord(f));renderAssets();await saveAll(false)}
+function showDuplicateReview(){const box=$('duplicateReview'),list=$('duplicateList');if(!pendingDuplicates.length){box.classList.remove('show');list.innerHTML='';return}list.innerHTML=pendingDuplicates.map(f=>`<div class="duplicate-item"><small>${escapeHTML(f.name)} (${Math.round(f.size/1024)} KB)</small><span class="duplicate-badge">Duplicate</span></div>`).join('');box.classList.add('show');box.scrollIntoView({behavior:'smooth',block:'center'})}
+async function addFiles(fileList){
+ const files=[...(fileList||[])].filter(f=>/\.(png|jpe?g|webp|svg)$/i.test(f.name));
+ if(!files.length){notify('No supported PNG, JPG, WEBP or SVG images found.','warn');return}
+ status('Checking images...');
+ const existing=new Set(images.map(existingSignature));
+ const accepted=[],seen=new Set();pendingDuplicates=[];
+ for(const f of files){const sig=fileSignature(f);if(existing.has(sig)||seen.has(sig))pendingDuplicates.push(f);else{accepted.push(f);seen.add(sig)}}
+ if(accepted.length)await commitFiles(accepted);
+ showDuplicateReview();
+ status('Saved locally');
+ notify(`${accepted.length} new image(s) imported.${pendingDuplicates.length?' '+pendingDuplicates.length+' possible duplicate(s) need review.':''}`,'ok')
+}
+function imageURL(im){const url=URL.createObjectURL(im.blob);if(!objectURLs.has(im.id))objectURLs.set(im.id,new Set());objectURLs.get(im.id).add(url);return url}
+function revokeImageURL(id,url){if(url)URL.revokeObjectURL(url);const urls=objectURLs.get(id);if(!urls)return;urls.delete(url);if(!urls.size)objectURLs.delete(id)}
+function revokeImageURLs(id){const urls=objectURLs.get(id);if(!urls)return;urls.forEach(url=>URL.revokeObjectURL(url));objectURLs.delete(id)}
+function revokeAllImageURLs(){objectURLs.forEach(urls=>urls.forEach(url=>URL.revokeObjectURL(url)));objectURLs.clear()}
+function filteredImages(){const q=$('search').value.trim().toLowerCase(),f=$('filterLetter').value;return images.filter(x=>{const displayName=String(x.name||'').toLowerCase(),originalName=String(x.original||'').toLowerCase();return (!q||displayName.includes(q)||originalName.includes(q))&&(f==='all'||(f==='unassigned'&&!x.letter)||x.letter===f)})}
+function validDisplayName(name){const v=String(name||'').trim();if(!v)return true;return !/^\d+$/.test(v)&&v.length<=60}
+function renderCoverage(){if(!$('coverageGrid'))return;const counts={};letters().forEach(l=>counts[l]=0);images.filter(x=>x.active!==false&&x.letter).forEach(x=>counts[x.letter]=(counts[x.letter]||0)+1);$('coverageGrid').innerHTML=letters().map(l=>{const n=counts[l]||0,cls=n===0?'none':n===1?'low':'ok';return `<div class="coverage-item ${cls}"><b>${l}</b><span>${n} image${n===1?'':'s'}</span></div>`}).join('')}
+function nameProblems(data){return data.filter(x=>!validDisplayName(x.name))}
+function renderAssets(){if(!$('assetGrid'))return;renderCoverage();const data=filteredImages();$('imageCount').textContent=`${images.length} total • ${images.filter(x=>!x.letter).length} unassigned • ${selected.size} selected`;$('assetGrid').innerHTML='';if(!data.length){$('assetGrid').innerHTML='<div class="empty">No matching images.</div>';return}const opts=letters().map(l=>`<option value="${l}">${l}</option>`).join('');data.forEach(im=>{const c=document.createElement('div');c.className='asset'+(!im.letter?' unassigned':'')+(selected.has(im.id)?' selected':'')+(im.active===false?' inactive':'');const url=imageURL(im);c.innerHTML=`<input class="asset-check" type="checkbox" data-sel="${im.id}" ${selected.has(im.id)?'checked':''}><img class="thumb" src="${url}"><div class="asset-fields"><label>Letter</label><select data-letter="${im.id}"><option value="">Select letter</option>${opts}</select><label>Display Name <span style="font-weight:400;color:var(--muted)">(Optional)</span></label><input data-name="${im.id}" maxlength="60" placeholder="Optional image name" class="${validDisplayName(im.name)?'':'name-invalid'}" value="${escapeHTML(im.name)}">${validDisplayName(im.name)?'':'<div class="name-hint">Leave empty or enter a meaningful name, not digits only.</div>'}<label class="asset-status"><input type="checkbox" data-active="${im.id}" ${im.active!==false?'checked':''}> Active in worksheets</label><div class="original">Original: ${escapeHTML(im.original)}</div><button class="btn small danger" data-remove="${im.id}">Remove</button></div>`;c.querySelector('[data-letter]').value=im.letter;c.querySelector('img').onload=()=>revokeImageURL(im.id,url);$('assetGrid').appendChild(c)});document.querySelectorAll('[data-sel]').forEach(e=>e.onchange=()=>{e.checked?selected.add(e.dataset.sel):selected.delete(e.dataset.sel);renderAssets()});document.querySelectorAll('[data-letter]').forEach(e=>e.onchange=()=>{images.find(x=>x.id===e.dataset.letter).letter=e.value;scheduleSave();renderAssets()});document.querySelectorAll('[data-name]').forEach(e=>e.oninput=()=>{images.find(x=>x.id===e.dataset.name).name=e.value;scheduleSave()});document.querySelectorAll('[data-active]').forEach(e=>e.onchange=()=>{images.find(x=>x.id===e.dataset.active).active=e.checked;renderAssets();scheduleSave()});document.querySelectorAll('[data-remove]').forEach(e=>e.onclick=async()=>{revokeImageURLs(e.dataset.remove);images=images.filter(x=>x.id!==e.dataset.remove);selected.delete(e.dataset.remove);await req(tx('images','readwrite').delete(e.dataset.remove));renderAssets();scheduleSave()})}
+function updateTemplateSettings(){
+ const type=$('worksheetType').value;
+ $('lineCountField').style.display=type==='writing'?'block':'none';
+ $('lineStyleField').style.display=type==='writing'?'block':'none';
+ $('choiceCountField').style.display=type==='circle'?'block':'none';
+ $('writingColumnsField').style.display=type==='writing'?'block':'none';
+ const help={matching:'Pictures are shuffled away from their correct letter.',test:'Each picture includes four practice lines.',circle:'Children circle the correct beginning letter.',trace:'Children trace the beginning letter four times.',missing:'Children complete the picture name with its missing first letter.',wordmatch:'Children match each picture to its display name.',writing:'Choose the number and style of writing lines below every picture.'};
+ $('templateHelp').textContent=help[type]||'';
+}
+function shuffled(a){const c=a.slice();if(!state.shuffle)return c;for(let i=c.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[c[i],c[j]]=[c[j],c[i]]}return c}
+function go(view){document.querySelectorAll('.view').forEach(v=>v.classList.toggle('active',v.id===view));document.querySelectorAll('.navbtn').forEach(b=>b.classList.toggle('active',b.dataset.view===view));window.scrollTo({top:0,behavior:'smooth'})}
+function headerHTML(){return isUrdu()?`<div class="urdu">نام: ______________</div><div class="urdu">جماعت: ${escapeHTML(state.className)} __________</div><div class="urdu">تاریخ: __________</div>`:`<div>Name: ______________</div><div>Class: ${escapeHTML(state.className)} ________</div><div>Date: __________</div>`}
+function makePaper(title,num){const p=document.createElement('section');p.className='paper '+(state.orientation==='landscape'?'landscape':'');p.innerHTML=`<div class="sheet-head">${headerHTML()}</div>${state.school?`<div style="text-align:center;font-size:12px">${escapeHTML(state.school)}</div>`:''}<div class="sheet-title ${isUrdu()?'urdu':''}">${escapeHTML(title)}</div>${state.instructions?`<div class="${isUrdu()?'urdu':''}" style="text-align:center;font-size:11px;margin:-3mm 0 4mm">${escapeHTML(state.instructions)}</div>`:''}`;p.dataset.page=num;return p}
+function addPageNo(p,n){const d=document.createElement('div');d.className='page-no';d.textContent=`Page ${n}${state.teacher?' • '+state.teacher:''}`;p.appendChild(d)}
+function picCell(im,test=false){const c=document.createElement('div');c.className=test?'testcell':'cell';if(im){const image=document.createElement('img'),url=imageURL(im);image.src=url;image.onload=()=>revokeImageURL(im.id,url);c.appendChild(image);const displayName=String(im.name||'').trim();if(state.nameMode==='below'&&displayName){const n=document.createElement('div');n.className='pic-label';n.textContent=displayName;c.appendChild(n)}else if(state.nameMode==='trace'&&displayName){const n=document.createElement('div');n.className='trace-name';n.textContent=displayName;c.appendChild(n)}}if(test){const lines=document.createElement('div');lines.className='lines';lines.innerHTML='<i></i><i></i><i></i><i></i>';c.appendChild(lines)}else{const line=document.createElement('div');line.className='answer-line';c.appendChild(line)}return c}
+function letterCell(l){const c=document.createElement('div');c.className='cell letter '+(isUrdu()?'urdu':'');c.textContent=isUrdu()?l:(state.letterCase==='lower'?l.toLowerCase():l);const line=document.createElement('div');line.className='answer-line';c.appendChild(line);return c}
+function derange(ims,slots){
+ const arr=shuffled(ims),matchSlot=Array(slots.length).fill(-1),matchImage=Array(arr.length).fill(-1);
+ const eligible=arr.map(im=>shuffled(slots.map((s,j)=>({s,j})).filter(x=>x.s.letter!==im.letter).map(x=>x.j)));
+ for(let start=0;start<arr.length;start++){
+  const queue=[start],seenImages=new Set([start]),seenSlots=new Set(),parentImageForSlot=Array(slots.length).fill(-1);let freeSlot=-1;
+  for(let head=0;head<queue.length&&freeSlot<0;head++){
+   const imageIndex=queue[head];
+   for(const slotIndex of eligible[imageIndex]){
+    if(seenSlots.has(slotIndex))continue;
+    seenSlots.add(slotIndex);parentImageForSlot[slotIndex]=imageIndex;
+    if(matchSlot[slotIndex]===-1){freeSlot=slotIndex;break}
+    const nextImage=matchSlot[slotIndex];
+    if(!seenImages.has(nextImage)){seenImages.add(nextImage);queue.push(nextImage)}
+   }
+  }
+  if(freeSlot<0)return null;
+  let slotIndex=freeSlot;
+  while(slotIndex!==-1){const imageIndex=parentImageForSlot[slotIndex],previousSlot=matchImage[imageIndex];matchSlot[slotIndex]=imageIndex;matchImage[imageIndex]=slotIndex;slotIndex=previousSlot}
+ }
+ return matchImage.map((slotIndex,imageIndex)=>({slot:slots[slotIndex],image:arr[imageIndex]}));
+}
+function matchingRowsPerPage(){
+  /* Landscape has less vertical room. These limits keep the whole matching grid
+     inside one physical A4 page, including header, title and footer. */
+  return state.orientation==='landscape'?4:6
+}
+function generateMatching(data){
+  const map={};
+  letters().forEach(l=>map[l]=[]);
+  data.forEach(x=>map[x.letter].push(x));
+  const active=letters().filter(l=>map[l].length);
+  const requestedSize=+state.lettersPerPage;
+  const safeSize=Math.min(requestedSize,matchingRowsPerPage());
+  let pn=0;
+  previewAnswers=[];
+
+  /* Chunk by the safe physical-page capacity. This prevents a matching row,
+     its letter, or its second picture from flowing onto the next printed page. */
+  for(let s=0;s<active.length;s+=safeSize){
+    const group=active.slice(s,s+safeSize);
+    if(group.length<2)continue;
+    const sides=state.layout==='three'?2:1;
+    const requestedPerLetter=state.imagesPerLetter==='all'?Math.max(...group.map(l=>map[l].length)):+state.imagesPerLetter;
+    const rounds=Math.max(1,Math.ceil(requestedPerLetter/sides));
+
+    for(let r=0;r<rounds;r++){
+      const chosen=[];
+      for(const l of group){
+        const remaining=state.imagesPerLetter==='all'?sides:Math.max(0,+state.imagesPerLetter-r*sides);
+        const wanted=Math.min(sides,remaining);
+        for(let k=0;k<wanted;k++){
+          let im=map[l][r*sides+k];
+          if(!im&&state.duplicates&&map[l].length){
+            im=map[l][(r*sides+k)%map[l].length];
+          }
+          if(im)chosen.push(im);
+        }
+      }
+
+      const slots=[];
+      group.forEach((l,row)=>{
+        for(let side=0;side<sides;side++)slots.push({row,side,letter:l});
+      });
+
+      const assigned=derange(chosen,slots);
+      if(!assigned)continue;
+
+      /* Secondary safety check: no picture may be placed in the row bearing
+         that picture's correct initial letter. */
+      const invalidPair=assigned.some(a=>a.image.letter===a.slot.letter);
+      if(invalidPair){
+        console.error('Unsafe matching assignment rejected.');
+        continue;
+      }
+
+      pn++;
+      const title=state.customTitle||(isUrdu()
+        ?'تصویروں کو درست شروع کے حرف سے ملائیں۔'
+        :'Match each picture with its beginning letter.');
+      const p=makePaper(title,pn);
+      p.classList.add('matching-paper');p.dataset.unsafe=String(invalidPair);
+      const g=document.createElement('div');
+      g.className='match-grid '+(sides===2?'three':'two');
+
+      group.forEach((l,row)=>{
+        const left=assigned.find(a=>a.slot.row===row&&a.slot.side===0)?.image;
+        const right=sides===2
+          ?assigned.find(a=>a.slot.row===row&&a.slot.side===1)?.image
+          :null;
+        g.appendChild(picCell(left));
+        g.appendChild(letterCell(l));
+        if(sides===2)g.appendChild(picCell(right));
+      });
+
+      assigned.forEach(a=>previewAnswers.push(a.image));
+      p.appendChild(g);
+      addPageNo(p,pn);
+      $('previewWrap').appendChild(p);
+    }
+  }
+  return pn
+}
+function generateTest(data){previewAnswers=[];let pn=0;for(let i=0;i<data.length;i+=24){pn++;const title=state.customTitle||(isUrdu()?'تصویر دیکھ کر شروع کا حرف لکھیں۔':'Look at each picture and write its beginning letter.');const p=makePaper(title,pn),g=document.createElement('div');g.className='test-grid';data.slice(i,i+24).forEach(im=>{g.appendChild(picCell(im,true));previewAnswers.push(im)});p.appendChild(g);addPageNo(p,pn);$('previewWrap').appendChild(p)}return pn}
+function templateTitle(type){
+ if(state.customTitle)return state.customTitle;
+ const en={circle:'Circle the correct beginning letter.',trace:'Trace the beginning letter.',missing:'Write the missing beginning letter.',wordmatch:'Match each picture with its correct word.',writing:'Look at each picture and write its beginning letter.'};
+ const ur={circle:'صحیح شروع کے حرف پر دائرہ لگائیں۔',trace:'شروع کے حرف پر ٹریس کریں۔',missing:'غائب شروع کا حرف لکھیں۔',wordmatch:'ہر تصویر کو درست لفظ سے ملائیں۔',writing:'تصویر دیکھیں اور شروع کا حرف لکھیں۔'};
+ return (isUrdu()?ur:en)[type]||''
+}
+function distractorLetters(correct,count){const pool=shuffled(letters().filter(l=>l!==correct));return shuffled([correct,...pool.slice(0,Math.max(0,count-1))])}
+function standardTemplateCell(im,type){
+ const c=document.createElement('div');c.className='writing-cell';
+ const image=document.createElement('img'),url=imageURL(im);image.src=url;image.onload=()=>revokeImageURL(im.id,url);c.appendChild(image);
+ const displayName=String(im.name||'').trim();if(state.nameMode==='below'&&type!=='missing'&&displayName){const n=document.createElement('div');n.className='pic-label';n.textContent=displayName;c.appendChild(n)}
+ if(type==='circle'){
+  const choices=document.createElement('div');choices.className='choice-grid';
+  distractorLetters(im.letter,+state.choiceCount).forEach(l=>{const d=document.createElement('div');d.className='choice-letter '+(l===im.letter?'correct-answer':'')+(isUrdu()?' urdu':'');d.textContent=isUrdu()?l:(state.letterCase==='lower'?l.toLowerCase():l);choices.appendChild(d)});c.appendChild(choices)
+ }else if(type==='trace'){
+  const row=document.createElement('div');row.className='trace-row';for(let i=0;i<4;i++){const d=document.createElement('div');d.className='trace-letter '+(isUrdu()?'urdu':'');d.textContent=isUrdu()?im.letter:(state.letterCase==='lower'?im.letter.toLowerCase():im.letter);row.appendChild(d)}c.appendChild(row)
+ }else if(type==='missing'){
+  const w=document.createElement('div');w.className='missing-word '+(isUrdu()?'urdu':'');const name=String(im.name||'');const rest=Array.from(name).slice(1).join('');w.innerHTML='<span class="missing-blank">_</span>'+escapeHTML(rest);c.appendChild(w)
+ }else if(type==='writing'){
+  const lines=document.createElement('div');lines.className='writing-lines '+state.lineStyle;for(let i=0;i<+state.lineCount;i++)lines.appendChild(document.createElement('i'));c.appendChild(lines)
+ }
+ return c
+}
+function generateStandardTemplate(data,type){previewAnswers=[];let pn=0;const per=+state.itemsPerPage;for(let i=0;i<data.length;i+=per){pn++;const p=makePaper(templateTitle(type),pn),g=document.createElement('div');const cols=type==='writing'?state.writingColumns:(per<=8?'2':per<=16?'3':'4');g.className='writing-grid cols-'+cols;data.slice(i,i+per).forEach(im=>{g.appendChild(standardTemplateCell(im,type));previewAnswers.push(im)});p.appendChild(g);addPageNo(p,pn);$('previewWrap').appendChild(p)}return pn}
+function generateWordMatch(data){previewAnswers=[];let pn=0;const per=Math.min(+state.itemsPerPage,12);for(let i=0;i<data.length;i+=per){pn++;const batch=data.slice(i,i+per),p=makePaper(templateTitle('wordmatch'),pn),g=document.createElement('div');g.className='word-match-grid';const pics=document.createElement('div'),words=document.createElement('div');pics.className=words.className='word-match-col';batch.forEach(im=>{const d=document.createElement('div');d.className='word-match-item';const image=document.createElement('img'),url=imageURL(im);image.src=url;image.onload=()=>revokeImageURL(im.id,url);d.appendChild(image);pics.appendChild(d);previewAnswers.push(im)});shuffled(batch).forEach(im=>{const d=document.createElement('div');d.className='word-match-item';const label=document.createElement('div');label.className='word-label '+(isUrdu()?'urdu':'');label.textContent=im.name;const line=document.createElement('div');line.className='word-match-line';d.append(label,line);words.appendChild(d)});g.append(pics,words);p.appendChild(g);addPageNo(p,pn);$('previewWrap').appendChild(p)}return pn}
+function generateAnswerKey(start){if(!state.answerKey||!previewAnswers.length)return 0;const unique=[];const seen=new Set();previewAnswers.forEach(x=>{if(!seen.has(x.id)){seen.add(x.id);unique.push(x)}});let count=0;for(let i=0;i<unique.length;i+=18){count++;const p=makePaper(isUrdu()?'جوابی کلید':'Answer Key',start+count);p.classList.add('answer-paper');const g=document.createElement('div');g.className='answer-grid';unique.slice(i,i+18).forEach(im=>{const d=document.createElement('div');d.className='answer-item';const image=document.createElement('img'),url=imageURL(im);image.src=url;image.onload=()=>revokeImageURL(im.id,url);const txt=document.createElement('b');txt.className=isUrdu()?'urdu':'';const displayName=String(im.name||'').trim();txt.textContent=displayName?`${displayName}: ${im.letter}`:(isUrdu()?`حرف: ${im.letter}`:`Letter: ${im.letter}`);d.append(image,txt);g.appendChild(d)});p.appendChild(g);addPageNo(p,start+count);$('previewWrap').appendChild(p)}return count}
+function generate(){readForm();if(state.worksheetType==='matching'&&+state.lettersPerPage>matchingRowsPerPage()){notify(`For reliable ${state.orientation} printing, matching pages are automatically limited to ${matchingRowsPerPage()} rows per page.`,'warn')}let data=images.filter(x=>x.active!==false);if(state.selectedOnly){data=data.filter(x=>selected.has(x.id));if(!selected.size){notify('Select images in Image Library or turn off selected-only mode.','err');go('libraryView');return}}const badNames=nameProblems(data);if(badNames.length){notify(`${badNames.length} image(s) have an invalid Display Name. Leave it empty or enter a meaningful name instead of digits only.`,'err');go('libraryView');return}const nameRequiredTemplates=['missing','wordmatch'];if(nameRequiredTemplates.includes(state.worksheetType)){const imagesWithoutNames=data.filter(im=>!String(im.name||'').trim());if(imagesWithoutNames.length){notify(`${imagesWithoutNames.length} image(s) need a Display Name for this worksheet type.`,'err');go('libraryView');return}}if(!data.length){notify('Upload images before generating a worksheet.','err');go('libraryView');return}const missing=data.filter(x=>!x.letter);if(missing.length){notify(`${missing.length} image(s) are unassigned. Select a letter for every image.`,'err');go('libraryView');return}$('previewWrap').innerHTML='';let pages;const generatedData=shuffled(data);if(state.worksheetType==='matching')pages=generateMatching(data);else if(state.worksheetType==='test')pages=generateTest(generatedData);else if(state.worksheetType==='wordmatch')pages=generateWordMatch(generatedData);else pages=generateStandardTemplate(generatedData,state.worksheetType);if(!pages){$('previewWrap').innerHTML='<div class="empty">No worksheet page could be generated with the current settings.</div>';notify('No page could be generated. Matching requires at least two letters.','err');return}pages+=generateAnswerKey(pages);$('statPages').textContent=pages;requestAnimationFrame(()=>{runValidation();previewIndex=0;renderPreviewNavigation()});notify(`${pages} A4 page(s) generated successfully.`,'ok');scheduleSave();go('previewView')}
+function previewPages(){return [...$('previewWrap').querySelectorAll('.paper')]}
+function renderPreviewNavigation(){const pages=previewPages(),thumbs=$('previewThumbs');if(!pages.length){$('pageIndicator').textContent='Page 0 of 0';thumbs.innerHTML='';return}previewIndex=Math.max(0,Math.min(previewIndex,pages.length-1));$('previewWrap').classList.add('single-page');pages.forEach((p,i)=>p.classList.toggle('preview-current',i===previewIndex));$('pageIndicator').textContent=`Page ${previewIndex+1} of ${pages.length}`;thumbs.innerHTML=pages.map((p,i)=>`<button class="preview-thumb ${i===previewIndex?'active':''}" data-page="${i}">${p.classList.contains('answer-paper')?'Key ':''}${i+1}</button>`).join('');thumbs.querySelectorAll('[data-page]').forEach(b=>b.onclick=()=>{previewIndex=+b.dataset.page;renderPreviewNavigation()})}
+function showAllPreviewPages(){$('previewWrap').classList.remove('single-page');previewPages().forEach(p=>p.classList.remove('preview-current'));$('pageIndicator').textContent=`All ${previewPages().length} pages`;$('previewThumbs').querySelectorAll('.preview-thumb').forEach(b=>b.classList.remove('active'))}
+function runValidation(){
+ const papers=[...$('previewWrap').querySelectorAll('.paper:not(.answer-paper)')];
+ const matching=[...$('previewWrap').querySelectorAll('.matching-paper')];
+ const results=[];
+ results.push({type:papers.length?'ok':'err',text:papers.length?`${papers.length} student worksheet page(s) generated.`:'No student worksheet page generated.'});
+ const splitRisk=matching.some(p=>p.scrollHeight>p.clientHeight+3);
+ results.push({type:splitRisk?'err':'ok',text:splitRisk?'A page may overflow. Reduce items per page.':(matching.length?'All matching content fits within its A4 page container.':'Template pages generated within their page containers.')});
+ const unsafe=matching.some(p=>p.dataset.unsafe==='true');
+ results.push({type:unsafe?'err':'ok',text:unsafe?'A picture is beside its own answer. Regenerate.':(matching.length?'No picture is placed beside its correct starting letter.':'No matching-pair conflict applies to this template.')});
+ const empty=[...$('previewWrap').querySelectorAll('.matching-paper .cell:not(.letter)')].filter(c=>!c.querySelector('img')).length;
+ results.push({type:empty?'warn':'ok',text:empty?`${empty} empty matching cell(s) detected.`:'No empty matching cells detected.'});
+ $('validationList').innerHTML=results.map(r=>`<div class="validation-item ${r.type}">${r.type==='ok'?'✓':r.type==='warn'?'!':'×'} ${r.text}</div>`).join('');
+ const pass=!results.some(r=>r.type==='err');$('validationStatus').textContent=pass?'Passed':'Needs review';$('validationStatus').style.background=pass?'#edf9f3':'#fff1f0';
+}
+function printMode(mode){if(!$('previewWrap').querySelector('.paper')){notify('Generate the live preview first.','err');return}if(mode==='answer'&&!$('previewWrap').querySelector('.answer-paper')){notify('No answer key is available. Enable Include answer key and regenerate.','err');return}document.body.classList.remove('print-student','print-answer');document.body.classList.add(mode==='answer'?'print-answer':'print-student');setTimeout(()=>window.print(),80)}
+window.addEventListener('afterprint',()=>document.body.classList.remove('print-student','print-answer'));window.addEventListener('pagehide',revokeAllImageURLs);
+function printNow(){if(!$('previewWrap').querySelector('.paper')){notify('Generate the live preview first.','err');return}window.print()}
+async function renderProjects(){if(!db)return;const list=await req(tx('projects').getAll());$('projectList').innerHTML='';if(!list.length){$('projectList').innerHTML='<div class="empty">No saved projects.</div>';return}list.sort((a,b)=>b.updated-a.updated).forEach(p=>{const c=document.createElement('div');c.className='project-card';c.innerHTML=`<span class="badge">${p.alphabet==='urdu'?'Urdu':'English'}</span><h4>${escapeHTML(p.name)}</h4><p>Updated: ${new Date(p.updated).toLocaleString()}</p><div class="btnrow"><button class="btn small primary" data-load="${p.id}">Load</button><button class="btn small" data-copy="${p.id}">Duplicate</button><button class="btn small danger" data-del="${p.id}">Delete</button></div>`;$('projectList').appendChild(c)});document.querySelectorAll('[data-load]').forEach(b=>b.onclick=()=>loadProject(b.dataset.load));document.querySelectorAll('[data-copy]').forEach(b=>b.onclick=()=>duplicateProject(b.dataset.copy));document.querySelectorAll('[data-del]').forEach(b=>b.onclick=async()=>{if(confirm('Delete this project and its images?')){await deleteProjectData(b.dataset.del);if(state.id===b.dataset.del)await newProject();renderProjects()}})}
+async function loadProject(id){const p=await req(tx('projects').get(id));if(!p)return;state=p;fillForm();await loadImages(id);$('previewWrap').innerHTML='<div class="empty">Project loaded. Generate preview when ready.</div>';notify(`Loaded project: ${p.name}`,'ok');go('dashboardView')}
+async function duplicateProject(id){const p=await req(tx('projects').get(id));const all=await req(tx('images').getAll());const newId=crypto.randomUUID(),copy={...p,id:newId,name:p.name+' Copy',updated:Date.now()};await req(tx('projects','readwrite').put(copy));for(const im of all.filter(x=>x.projectId===id))await req(tx('images','readwrite').put({...im,id:crypto.randomUUID(),projectId:newId}));renderProjects();notify('Project duplicated.','ok')}
+async function newProject(){revokeAllImageURLs();state={id:crypto.randomUUID(),name:'New Alphabet Project',alphabet:'english',school:'',teacher:'',className:'',subject:'Alphabet',worksheetType:'matching',customTitle:'',instructions:'',lettersPerPage:'6',imagesPerLetter:'2',layout:'three',orientation:'portrait',letterCase:'upper',showNames:false,nameMode:'hide',duplicates:false,shuffle:true,answerKey:true,selectedOnly:false,itemsPerPage:'12',lineCount:'4',lineStyle:'plain',choiceCount:'3',writingColumns:'3',updated:Date.now()};images=[];selected.clear();fillForm();$('previewWrap').innerHTML='<div class="empty">New project ready.</div>';await saveAll(false);go('projectView')}
+function updateStats(){const assigned=images.filter(x=>x.letter).length;$('statImages').textContent=images.length;$('statAssigned').textContent=assigned;$('statLetters').textContent=new Set(images.map(x=>x.letter).filter(Boolean)).size;$('dashProject').textContent=state.name;$('dashMeta').textContent=`${isUrdu()?'Urdu':'English'} • ${({matching:'Matching Worksheet',test:'Picture Test',circle:'Circle Correct Letter',trace:'Trace Letter',missing:'Missing Letter',wordmatch:'Picture to Word',writing:'Writing Lines'}[state.worksheetType]||'Worksheet')}`}
+async function exportBackup(){await saveAll(false);localStorage.setItem('AlphabetStudioLastBackup',String(Date.now()));const payload={version:1,project:{...state},images:[]};for(const im of images){const data=await blobToData(im.blob);payload.images.push({...im,blob:data})}const blob=new Blob([JSON.stringify(payload)],{type:'application/json'}),a=document.createElement('a'),url=URL.createObjectURL(blob);a.href=url;a.download=(state.name.replace(/[^a-z0-9ا-ے]+/gi,'_')||'project')+'.json';a.click();URL.revokeObjectURL(url)}
+function blobToData(blob){return new Promise(res=>{const r=new FileReader();r.onload=()=>res(r.result);r.readAsDataURL(blob)})}async function dataToBlob(data){return fetch(data).then(r=>r.blob())}
+async function importBackup(file){try{const j=JSON.parse(await file.text());if(!j.project||!Array.isArray(j.images))throw Error();state={...j.project,id:crypto.randomUUID(),name:j.project.name+' Imported',updated:Date.now()};images=[];for(const im of j.images)images.push({...im,id:crypto.randomUUID(),projectId:state.id,blob:await dataToBlob(im.blob)});fillForm();await saveAll(false);renderAssets();notify('Project backup imported successfully.','ok');go('dashboardView')}catch(e){notify('Invalid project backup file.','err')}}
+function quickCurrent(){return quickItems[quickIndex]||null}
+function quickRender(){const im=quickCurrent();if(!im){closeQuickAssign();return}const old=$('quickImage').dataset.url,oldId=$('quickImage').dataset.imageId;if(old)revokeImageURL(oldId,old);const url=imageURL(im);$('quickImage').src=url;$('quickImage').dataset.url=url;$('quickImage').dataset.imageId=im.id;$('quickProgress').textContent=`${quickIndex+1} of ${quickItems.length}`;$('quickName').value=im.name;$('quickActive').checked=im.active!==false;$('quickLetters').innerHTML=letters().map(l=>`<button type="button" class="quick-letter ${im.letter===l?'active':''}" data-quick-letter="${l}">${l}</button>`).join('');$('quickLetters').querySelectorAll('[data-quick-letter]').forEach(b=>b.onclick=()=>{im.letter=b.dataset.quickLetter;quickRender();scheduleSave()});$('quickPrev').disabled=quickIndex===0;$('quickNext').disabled=quickIndex>=quickItems.length-1}
+function saveQuickFields(){const im=quickCurrent();if(!im)return;im.name=$('quickName').value.trim();im.active=$('quickActive').checked;scheduleSave()}
+function openQuickAssign(){quickItems=filteredImages();if(!quickItems.length){notify('No visible images are available for quick assignment.','warn');return}quickIndex=0;$('quickModal').classList.add('show');document.body.classList.add('menu-open');quickRender();setTimeout(()=>$('quickName').focus(),100)}
+function closeQuickAssign(){saveQuickFields();const url=$('quickImage').dataset.url,id=$('quickImage').dataset.imageId;if(url)revokeImageURL(id,url);$('quickImage').dataset.url='';$('quickImage').dataset.imageId='';$('quickModal').classList.remove('show');document.body.classList.remove('menu-open');renderAssets()}
+function bind(){
+$('backupNow').onclick=exportBackup;
+$('quickAssign').onclick=openQuickAssign;$('quickClose').onclick=closeQuickAssign;$('quickModal').onclick=e=>{if(e.target===$('quickModal'))closeQuickAssign()};
+$('quickPrev').onclick=()=>{saveQuickFields();if(quickIndex>0){quickIndex--;quickRender()}};$('quickNext').onclick=()=>{saveQuickFields();if(quickIndex<quickItems.length-1){quickIndex++;quickRender()}};$('quickSaveNext').onclick=()=>{saveQuickFields();if(quickIndex<quickItems.length-1){quickIndex++;quickRender()}else{closeQuickAssign();notify('Quick assignment completed.','ok')}};
+$('quickName').addEventListener('keydown',e=>{if(e.key==='Enter')$('quickSaveNext').click()});
+$('skipDuplicates').onclick=()=>{pendingDuplicates=[];showDuplicateReview();notify('Duplicate images skipped.','ok')};$('keepDuplicates').onclick=async()=>{const files=pendingDuplicates.slice();pendingDuplicates=[];showDuplicateReview();await commitFiles(files);notify(`${files.length} duplicate image(s) kept.`,'ok')};
+$('prevPage').onclick=()=>{if(previewIndex>0){previewIndex--;renderPreviewNavigation()}};$('nextPage').onclick=()=>{if(previewIndex<previewPages().length-1){previewIndex++;renderPreviewNavigation()}};$('showAllPages').onclick=showAllPreviewPages;
+
+const menuToggle=$('menuToggle'),sidebar=$('appSidebar'),sidebarClose=$('sidebarClose'),sidebarOverlay=$('sidebarOverlay');
+function setMobileMenu(open){sidebar.classList.toggle('show',open);sidebarOverlay.classList.toggle('show',open);sidebarOverlay.setAttribute('aria-hidden',String(!open));menuToggle.setAttribute('aria-expanded',String(open));document.body.classList.toggle('menu-open',open)}
+menuToggle.onclick=()=>{if(window.innerWidth<=950){setMobileMenu(!sidebar.classList.contains('show'))}else{document.body.classList.toggle('sidebar-collapsed');menuToggle.setAttribute('aria-expanded',String(document.body.classList.contains('sidebar-collapsed')))}};
+sidebarClose.onclick=()=>setMobileMenu(false);sidebarOverlay.onclick=()=>setMobileMenu(false);
+document.addEventListener('keydown',e=>{if(e.key==='Escape')setMobileMenu(false)});
+window.addEventListener('resize',()=>{if(window.innerWidth>950)setMobileMenu(false)});
+document.querySelectorAll('[data-view]').forEach(b=>b.onclick=()=>{go(b.dataset.view);if(window.innerWidth<=950)setMobileMenu(false)});document.querySelectorAll('[data-go]').forEach(b=>b.onclick=()=>go(b.dataset.go));document.querySelectorAll('input,select,textarea').forEach(el=>{if(!['fileInput','importProject'].includes(el.id))el.addEventListener('change',()=>{readForm();if(el.id==='alphabet')refreshLetterMenus();if(el.id==='worksheetType')updateTemplateSettings();scheduleSave();updateStats()})});$('browseBtn').onclick=()=>$('fileInput').click();$('fileInput').onchange=e=>addFiles(e.target.files);const dz=$('dropzone');['dragenter','dragover'].forEach(t=>dz.addEventListener(t,e=>{e.preventDefault();dz.classList.add('drag')}));['dragleave','drop'].forEach(t=>dz.addEventListener(t,e=>{e.preventDefault();dz.classList.remove('drag')}));dz.addEventListener('drop',e=>addFiles(e.dataTransfer.files));$('search').oninput=renderAssets;$('filterLetter').onchange=renderAssets;$('selectAll').onclick=()=>{filteredImages().forEach(x=>selected.add(x.id));renderAssets()};$('clearSelection').onclick=()=>{selected.clear();renderAssets()};$('applyBulk').onclick=()=>{const l=$('bulkLetter').value;if(!l||!selected.size){notify('Select images and a bulk letter first.','warn');return}images.filter(x=>selected.has(x.id)).forEach(x=>x.letter=l);renderAssets();scheduleSave()};$('deleteSelected').onclick=async()=>{if(!selected.size)return;if(confirm(`Delete ${selected.size} selected image(s)?`)){for(const id of selected){revokeImageURLs(id);await req(tx('images','readwrite').delete(id))}images=images.filter(x=>!selected.has(x.id));selected.clear();renderAssets();scheduleSave()}};$('saveProject').onclick=() => saveAll(true);$('saveProject2').onclick=() => saveAll(true);$('newProject').onclick=newProject;['generatePreview','refreshPreview','quickPreview','fab'].forEach(id=>$(id).onclick=generate);$('printBtn').onclick=()=>printMode('student');$('previewPrint').onclick=()=>printMode('student');$('printAnswerKey').onclick=()=>printMode('answer');$('pdfBtn').onclick=()=>{notify('In the print dialog select Save as PDF.','ok');setTimeout(()=>printMode('student'),150)};$('previewPdf').onclick=()=>{notify('In the print dialog select Save as PDF.','ok');setTimeout(()=>printMode('student'),150)};$('answerPdf').onclick=()=>{notify('In the print dialog select Save as PDF.','ok');setTimeout(()=>printMode('answer'),150)};$('exportProject').onclick=exportBackup;$('importProjectBtn').onclick=()=>$('importProject').click();$('importProject').onchange=e=>e.target.files[0]&&importBackup(e.target.files[0])}
+async function init(){try{await openDB();bind();updateTemplateSettings();const projects=await req(tx('projects').getAll());if(projects.length){projects.sort((a,b)=>b.updated-a.updated);state=projects[0];fillForm();await loadImages(state.id)}else{fillForm();await saveAll(false)}await renderProjects();updateStats();status('Saved locally')}catch(e){notify('Browser storage could not be opened. Use a modern Chrome, Edge or Firefox browser.','err');console.error(e)}}init();
+})();
+</script>
+<div id="quickModal" class="quick-modal no-print" role="dialog" aria-modal="true" aria-labelledby="quickTitle">
+<div class="quick-card"><div class="quick-head"><div><h3 id="quickTitle">Quick Image Assignment</h3><div id="quickProgress" class="quick-progress">0 of 0</div></div><button class="btn small" id="quickClose">Close</button></div>
+<div class="quick-image-wrap"><img id="quickImage" alt="Selected library image"></div>
+<div class="field" style="margin-top:12px"><label>Display Name <span style="font-weight:400;color:var(--muted)">(Optional)</span></label><input id="quickName" maxlength="60" placeholder="Optional image name"></div>
+<div class="field" style="margin-top:10px"><label>Choose Letter</label><div id="quickLetters" class="quick-letter-grid"></div></div>
+<label class="asset-status" style="margin-top:12px"><input id="quickActive" type="checkbox" checked> Active in worksheets</label>
+<div class="quick-actions"><button class="btn" id="quickPrev">Previous</button><button class="btn" id="quickNext">Next</button><button class="btn primary" id="quickSaveNext">Save & Next</button></div></div></div>
+</body></html>
